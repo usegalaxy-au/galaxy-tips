@@ -2,7 +2,7 @@ name: Generate Tips Catalogue
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, dev ]
   workflow_dispatch:
 
 jobs:
@@ -38,10 +38,11 @@ jobs:
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
+        git checkout main
         git add CATALOGUE.md
         git commit -m "Auto-update tips catalogue
 
         🤖 Generated with GitHub Actions
 
         Co-Authored-By: GitHub Actions <action@github.com>"
-        git push
+        git push origin main
