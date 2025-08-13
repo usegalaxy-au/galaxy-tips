@@ -1,9 +1,14 @@
 # Galaxy Tips Catalogue
 
-| Tip # | Title | State |
-|-------|-------|-------|
-| 1 | Using browser autocomplete to navigate to Galaxy tools? | production |
-| 2 | Pssst! Have you heard about Galaxy Labs? | production |
-| 3 | Planning to publish your work? | production |
-| 4 | Running out of Galaxy storage? | production |
-| 5 | Request a new Galaxy tool | production |
+| Tip # | Title | Body | State |
+|-------|-------|------|-------|
+| 1 | Using browser autocomplete to navigate to Galaxy tools? | Using browser autocomplete to navigate to Galaxy tools? Watch out - your browser may be suggesting an old version of the tool! | production |
+| 2 | Pssst! Have you heard about Galaxy Labs? | Pssst! Have you heard about Galaxy Labs? Did you know that you can switch from the main website to different “Galaxy Labs”? Each lab is tailored to a specific research domain, for example Genomics or Proteomics. Check out this icon in the navigation bar to discover a list of available... | production |
+| 3 | Planning to publish your work? | Planning to publish your work? If Galaxy Australia contributed to your research, please acknowledge us in your publications! This helps us to secure more funding for the platform in the future. | production |
+| 4 | Running out of Galaxy storage? | Running out of Galaxy storage? If you need more data, you can request an increase to your Galaxy quota. | production |
+| 5 | Request a new Galaxy tool | Request a new Galaxy tool Missing something? If you know of an awesome tool that should be on Galaxy, you can request a tool . If it's already in the Galaxy Tool Shed , we can install it straight away. If not, we can put in a request for the... | production |
+|  | New zip file explorer | We had a feature request for ages to do something like this https://www.youtube.com/watch?v=oqEUHoCcEPo <img width="743" height="392" alt="Image" src="https://github.com/user-attachments/assets/ee70c869-4174-49cb-a801-4607faa7da05" /> | requested |
+|  | Workflow reports | Are you sharing results with collaborators? Try [Galaxy's workflow reports](https://training.galaxyproject.org/training-material/topics/galaxy-interface/tutorials/workflow-reports/tutorial.html) to design automated reports for your analyses. - Include analysis figures, tables and text to customize your workflow report template - Save your customized report to use it again for future workflow invocations | requested |
+|  | Australian researcher accounts | ```html Are you affiliated with an <a href="https://site.usegalaxy.org.au/list-of-institutions.html" target="_blank"> Australian research institution</a>? Make sure your account is registered with your institutional email address to get access to exclusive resources! - Additional quota - Restricted-access tools ``` | requested |
+|  | Citing galaxy tools from history | Is your work going to be used for a publication? Don't forget to use the "Export tool references" feature in your Galaxy History menu! You're one click away from APA or Bibtex formatted reference list. (screenshot of ref list in Galaxy UI) | requested |
+|  | Is your tool running slow? | If you find that a tool is running slowly, let us know and we can allocate more compute to future jobs for that tool (for everyone). Galaxy AU has access to over 1000 cores of compute - just let us know how to use it! [graphic showing AU compute infra] | requested |
