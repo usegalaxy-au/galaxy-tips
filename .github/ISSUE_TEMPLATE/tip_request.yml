@@ -26,6 +26,6 @@ body:
       description: Describe the tip content in detail
       placeholder: |
         Explain the Galaxy feature, workflow, or best practice you'd like to share.
-        Include step-by-step instructions if applicable.
+        If applicable, include step-by-step instructions and images or video links.
     validations:
       required: true
