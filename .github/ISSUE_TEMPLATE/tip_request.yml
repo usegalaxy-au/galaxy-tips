@@ -1,0 +1,31 @@
+name: Tip Request
+description: Request a new Galaxy tip to be added
+title: "[Tip request] "
+labels: ["tip request"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for suggesting a new Galaxy tip! Your suggestion will help other users learn about Galaxy features.
+
+  - type: input
+    id: tip-title
+    attributes:
+      label: Tip Title
+      description: A catchy title for your tip
+      placeholder: "e.g., 'Using keyboard shortcuts to navigate Galaxy'"
+    validations:
+      required: true
+
+  - type: textarea
+    id: tip-content
+    attributes:
+      label: Tip Content
+      description: Describe the tip content in detail
+      placeholder: |
+        Explain the Galaxy feature, workflow, or best practice you'd like to share.
+        Include step-by-step instructions if applicable.
+    validations:
+      required: true

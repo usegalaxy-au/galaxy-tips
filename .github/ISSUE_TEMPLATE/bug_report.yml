@@ -1,0 +1,29 @@
+name: Bug Report
+description: Report a bug or issue with Galaxy tips
+title: "[Bug] "
+labels: ["bug"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug! Please provide as much detail as possible.
+
+  - type: input
+    id: summary
+    attributes:
+      label: Bug Summary
+      description: A brief description of the bug
+      placeholder: "Describe the issue in a few words"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Detailed Description
+      description: Provide a detailed description of the bug
+      placeholder: "Describe what happened, what you expected to happen, and any error messages"
+    validations:
+      required: true
