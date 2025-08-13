@@ -84,6 +84,36 @@ def extract_html_body(content: str) -> str:
     return text_content
 
 
+def filter_media_tags(text: str) -> str:
+    """Filter HTML and markdown image/media tags and replace with placeholders."""
+    # Replace HTML image tags
+    text = re.sub(r'<img[^>]*>', '&lt;image&gt;', text, flags=re.IGNORECASE)
+
+    # Replace HTML video tags
+    text = re.sub(
+        r'<video[^>]*>.*?</video>', '&lt;video&gt;', text,
+        flags=re.DOTALL | re.IGNORECASE
+    )
+
+    # Replace HTML audio tags
+    text = re.sub(
+        r'<audio[^>]*>.*?</audio>', '&lt;audio&gt;', text,
+        flags=re.DOTALL | re.IGNORECASE
+    )
+
+    # Replace markdown images: ![alt text](url) or ![alt text](url "title")
+    text = re.sub(r'!\[[^\]]*\]\([^)]+\)', '&lt;image&gt;', text)
+
+    # Remove code block markers (```language and ```)
+    text = re.sub(r'```\w*\s*', '', text)
+    text = re.sub(r'```', '', text)
+
+    # Remove inline code markers
+    text = re.sub(r'`([^`]+)`', r'\1', text)
+
+    return text
+
+
 def extract_tip_info(content: str, file_path: str) -> Tuple[int, str, str]:
     """Extract tip number, title, and body from HTML content."""
     # Extract tip number from filename
@@ -104,6 +134,9 @@ def extract_tip_info(content: str, file_path: str) -> Tuple[int, str, str]:
 
     # Extract body content
     body = extract_html_body(content)
+
+    # Filter media tags
+    body = filter_media_tags(body)
 
     return tip_number, title, body
 
@@ -162,6 +195,8 @@ def get_github_issues() -> List[TipInfo]:
                 body = issue.get('body', '') or ''
                 # Replace newlines with spaces and clean up
                 body = re.sub(r'\s+', ' ', body.strip())
+                # Filter media tags
+                body = filter_media_tags(body)
                 words = body.split()
                 if len(words) > 50:
                     body = ' '.join(words[:50]) + '...'
