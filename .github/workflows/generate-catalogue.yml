@@ -49,7 +49,15 @@ jobs:
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git checkout main
+        
+        # Stash changes if not on main branch
+        current_branch=$(git branch --show-current)
+        if [ "$current_branch" != "main" ]; then
+          git stash push -m "Temporary stash for branch switch"
+          git checkout main
+          git stash pop
+        fi
+        
         git add CATALOGUE.md
         git commit -m "Auto-update tips catalogue
 
