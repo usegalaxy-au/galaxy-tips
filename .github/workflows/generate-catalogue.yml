@@ -13,8 +13,9 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
       with:
-        fetch-depth: 0  # Fetch all history for all branches
-    
+      fetch-depth: 0
+      ref: main
+
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
@@ -50,19 +51,6 @@ jobs:
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         
-        # Store the generated catalogue content in ./var/ which happens to be
-        # git-ignored
-        mkdir -p var
-        cp CATALOGUE.md var/CATALOGUE.md
-        
-        # Always work on main branch
-        current_branch=$(git branch --show-current)
-        if [ "$current_branch" != "main" ]; then
-          git checkout main
-          # Overwrite with our generated version
-          cp var/CATALOGUE.md CATALOGUE.md
-        fi
-
         # Stage and commit the changes
         git add CATALOGUE.md
         git commit -m "Auto-update tips catalogue
