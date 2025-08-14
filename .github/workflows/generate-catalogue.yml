@@ -4,13 +4,13 @@ on:
   push:
     branches: [ main, dev ]
   workflow_dispatch:
-  concurrency:
-    group: generate-catalogue
-    cancel-in-progress: true
 
 jobs:
   generate-catalogue:
     runs-on: ubuntu-latest
+    concurrency:
+      group: generate-catalogue
+      cancel-in-progress: true
     
     steps:
     - name: Checkout repository
