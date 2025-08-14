@@ -50,20 +50,19 @@ jobs:
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         
-        # Store the generated catalogue content
-        cp CATALOGUE.md CATALOGUE.md.generated
+        # Store the generated catalogue content in ./var/ which happens to be
+        # git-ignored
+        mkdir -p var
+        cp CATALOGUE.md var/CATALOGUE.md
         
         # Always work on main branch
         current_branch=$(git branch --show-current)
         if [ "$current_branch" != "main" ]; then
           git checkout main
           # Overwrite with our generated version
-          cp CATALOGUE.md.generated CATALOGUE.md
+          cp var/CATALOGUE.md CATALOGUE.md
         fi
-        
-        # Clean up temporary file
-        rm -f CATALOGUE.md.generated
-        
+
         # Stage and commit the changes
         git add CATALOGUE.md
         git commit -m "Auto-update tips catalogue
