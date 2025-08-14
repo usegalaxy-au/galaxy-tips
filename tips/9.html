@@ -1,3 +1,14 @@
-<h1>Galaxy now has native support ZIP archives</h1>
+<h1>Improved support for ZIP archives</h1>
 
-<iframe class="mx-auto" width="560" height="315" src="https://www.youtube.com/embed/oqEUHoCcEPo" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+<iframe id="galaxy-tip-9-video" class="my-3 mx-auto" style="display: block; width: 100%; height: 450px; visibility: hidden;" src="https://www.youtube.com/embed/oqEUHoCcEPo" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+
+<script>
+  window.onload = function() {
+    var iframe = document.getElementById('galaxy-tip-9-video');
+    if (iframe) {
+      var width = iframe.offsetWidth;
+      iframe.style.height = (width * 9 / 16) + 'px';
+    }
+    iframe.style.visibility = 'visible';
+  };
+</script>
