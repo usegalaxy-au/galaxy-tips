@@ -10,6 +10,15 @@ body:
       value: |
         Thank you for suggesting a new Galaxy tip! Your suggestion will help other users learn about Galaxy features.
 
+  - type: checkboxes
+    id: tip-purpose
+    attributes:
+      label: Does this tip help users to operate Galaxy Australia better?
+      description: Tips are intended to help users to navigate the service. They shouldn't be used to promote related events or services, as this can reduce user engagement.
+      options:
+        - label: Yes, this tip helps users operate Galaxy Australia better
+          required: true
+
   - type: input
     id: tip-title
     attributes:
