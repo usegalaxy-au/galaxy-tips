@@ -2,7 +2,7 @@
 
 | Tip # | Title | Body | State |
 |-------|-------|------|-------|
-| 1 | Using browser autocomplete to navigate to Galaxy tools? | Using browser autocomplete to navigate to Galaxy tools? Watch out - your browser may be suggesting an old version of the tool! | production |
+| 1 | Using browser autocomplete to navigate to a Galaxy tool? | Using browser autocomplete to navigate to a Galaxy tool? Watch out - your browser may be suggesting an older version of the tool! | production |
 | 2 | Pssst! Have you heard about Galaxy Labs? | Pssst! Have you heard about Galaxy Labs? Did you know that you can switch from the main website to different “Galaxy Labs”? Each lab is tailored to a specific research domain, for example Genomics or Proteomics. Check out this icon in the navigation bar to discover a list of available... | production |
 | 3 | Planning to publish your work? | Planning to publish your work? If Galaxy Australia contributed to your research, please acknowledge us in your publications! This helps us to secure more funding for the platform in the future. | production |
 | 4 | Running out of Galaxy storage? | Running out of Galaxy storage? If you need more data, you can request an increase to your Galaxy quota. | production |
